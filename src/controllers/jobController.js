@@ -6,7 +6,6 @@ const getJobs = (req, res) => {
   })
 }
 
-
 export {
   getJobs
 }
