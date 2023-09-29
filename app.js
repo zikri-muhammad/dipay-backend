@@ -11,6 +11,9 @@ dotenv.config({ path: './config/config.env' })
 // connect to database
 connectDatabase()
 
+// set up body parser
+app.use(express.json())
+
 // import all routes
 import routerJob from "./src/routes/jobs.js";
 
