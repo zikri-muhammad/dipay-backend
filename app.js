@@ -1,4 +1,5 @@
 import express from 'express';
+import serverless from 'serverless-http';
 import dotenv from 'dotenv';
 import connectDatabase from './config/database.js';
 import errorMiddleware from './src/middlewares/errors.js';
@@ -43,9 +44,9 @@ app.all('*', (req, res, next) => {
 // Middleware to handle errors
 app.use(errorMiddleware);
 
-const server = app.listen(PORT, ()=> {
+const server = serverless(app.listen(PORT, ()=> {
   console.log(`Server started on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.`);
-});
+}));
 
 // Handling Unhandled Promise Rejection
 process.on('unhandledRejection', err => {
