@@ -30,10 +30,19 @@ app.use(cookieParser());
 // import all routes
 import authRoute from "./src/routes/authRoute.js";
 import userRoute from "./src/routes/userRoute.js";
+import companyRoute from "./src/routes/companyRoute.js";
+import employeeRoute from "./src/routes/employeeRoute.js";
+import duplicateZeroRoute from "./src/routes/duplicateZeroRoute.js";
+import countryRoute from "./src/routes/countryRoute.js";
 
 // console.log(routerJob)
-app.use('/api/v1', authRoute)
-app.use('/api/v1', userRoute)
+app.use('/api', authRoute)
+app.use('/api', userRoute)
+app.use('/api', companyRoute)
+app.use('/api', employeeRoute)
+app.use('/api', duplicateZeroRoute)
+app.use('/api', countryRoute)
+
 
 // Handle unhandled routes
 app.all('*', (req, res, next) => {
