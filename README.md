@@ -7,4 +7,5 @@
 
 
 ## notes
-- untuk colection postman telah saya sertakan di repo
+- untuk colection postman telah saya sertakan di github
+- untuk email saya menggunakan mailtrap 
